@@ -1,0 +1,149 @@
+@CHARSET "UTF-8";
+*{
+	overflow:hidden;
+	font-family: "微软雅黑";
+    font-size: 13px;
+}
+html,body{
+	width:100%;
+	height:100%;
+}
+.main-box{
+	 margin: 20px 20px 20px 20px;
+	 position: relative;
+}
+.table{
+	display:table;
+	height:98px;
+	border:0;
+}
+.table-tr {
+    display: table-row;
+    height: 28px;
+    border: 0;
+}
+.table-th {
+    display: table-cell;
+    font-weight: bold;
+    height: 100%;
+    border: 1px solid gray;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #E5E5E5;
+    border: 0;
+}
+
+.table-td {
+    display: table-cell;
+    height: 100%;
+    border: 1px solid gray;
+    vertical-align: middle;
+    border: 0;
+}
+
+.table-right {
+    text-align: right;
+}
+
+.table-left {
+    text-align: left;
+}
+
+.table input {
+    height: 30px;
+    width: 180px;
+    border: 1px solid #dddddd;
+    padding-left: 10px;
+    /*输入框不超出设置的最大容器*/
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: inline-block;
+    float: left;
+}
+
+.table input:focus {
+    outline: none;
+    border: 1px solid orangered;
+    box-shadow: 0 0 2px orangered;
+}
+
+.btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 11px;
+    background-color: orangered;
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-ban {
+    background-color: red;
+}
+
+.btn-warn {
+    background-color: #367ea8;
+}
+
+.btn-safe {
+    background-color: #00C1DE;
+}
+
+.toggle-btn{
+	color:blue;
+	cursor: pointer;
+}
+.toggle-btn:link,
+.toggle-btn:visited,
+.toggle-btn:hover,
+.toggle-btn:active{
+	color:blue;
+}
+
+.nav-tools{
+	padding-top:30px;
+	height: 64px;
+}
+.tools{
+	float:right;
+}
+.tools li{
+	color:#ffffff;
+	display: inline;
+}
+
+.page{
+	position:absolute;
+	bottom:0;
+}
+
+/*loading*/
+.loading{
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	bottom:0;
+	z-index:0;
+	display: none;
+}
+.loading{
+	background-color: rgba(0,0,0,0.1);/* IE9、标准浏览器、IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂 */
+}
+.loading span{
+	display: block;
+	color:red;
+	position:relative; /* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+	left:40%;
+	margin-top:320px;
+}
+@media \0screen\,screen\9 {/* 只支持IE6、7、8 */
+.loading{
+	background-color:#f2f2f2;
+    filter:Alpha(opacity=10);
+    position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+}

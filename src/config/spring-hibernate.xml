@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- 加载配置文件 -->
+	<context:property-placeholder location="classpath:config/jdbc.properties"
+		file-encoding="utf-8" ignore-unresolvable="true" />
+
+	 <!--配置数据源，这里使用Spring默认-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${sqlserver.driver}"/>
+        <property name="url" value="${sqlserver.url}"/>
+        <property name="username" value="${sqlserver.username}"/>
+        <property name="password" value="${sqlserver.password}"/>
+    </bean>
+    <!--配置hibernate sessionFacotry-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+            </props>
+        </property>
+        <!--自动扫描注解的方式配置hibernate 类文件-->
+        <property name="packagesToScan">
+            <list>
+                <value>com.lee.entity</value>
+            </list>
+        </property>
+    </bean>
+	
+	<!-- jdbcTemplate -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
+		p:dataSource-ref="dataSource" /> 
+
+	<!-- 配置Hibernate事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 配置事务异常封装 -->
+	<bean id="persistenceExceptionTranslationPostProcessor"
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+	<!-- 配合<tx:advice>和<aop:advisor>完成了事务切面的定义 -->
+	<!-- 使用强大的切点表达式是语言轻松定义目标方法 -->
+	<aop:config proxy-target-class="true">
+		<!-- 通过aop定义事务增强切面 -->
+		<aop:pointcut expression=" execution(* com.lee.service..*(..))"
+			id="serviceMethod" />
+		<!-- 引用事务增强 -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" />
+	</aop:config>
+	<!-- 事务增强 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 事务属性定义 -->
+		<tx:attributes>
+			<tx:method name="remove*" rollback-for="Exception"/>
+            <tx:method name="save*" rollback-for="Exception"/>
+            <tx:method name="update*" rollback-for="Exception"/>
+            <tx:method name="*" read-only="true" rollback-for="Exception"/>
+		</tx:attributes>
+	</tx:advice>
+</beans>

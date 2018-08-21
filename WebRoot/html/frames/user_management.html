@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>userManagement</title>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<meta name="viewport"
+	content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+<meta name="format-detection"
+	content="telephone=no,email=no,date=no,address=no">
+<link rel='stylesheet'
+	href='../../assets/js/themes/bootstrap/easyui.css' type='text/css' />
+<link rel='stylesheet' href='../../assets/js/themes/icon.css'
+	type='text/css' />
+<link rel='stylesheet'
+	href='../../assets/js/font-awesome-4.7.0/css/font-awesome.css'
+	type='text/css' />
+<link rel='stylesheet' href='../../assets/css/user_management.css'
+	type='text/css' />
+<link rel='stylesheet' href='../../assets/css/datagrid.css'
+	type='text/css' />
+<link rel='stylesheet' href='../../assets/css/paging_toolbar.css'
+	type='text/css' />
+<link rel='stylesheet' href='../../assets/css/api.css' type='text/css' />
+</head>
+
+<body>
+	<div class='main-box'>
+		<div class='table'>
+			<div class='table-tr'>
+				<div class='table-td table-right'>用户名称：</div>
+				<div class='table-td table left'>
+					<input id='userName' type='text' />
+				</div>
+				<div class='table-td table-right'>手机号码：</div>
+				<div class='table-td table left'>
+					<input id='phoneNumber' type='text' />
+				</div>
+				<div class='table-td table-right'>组织：</div>
+				<div class='table-td table left'>
+					<input id='organization' class='easyui-combobox' />
+				</div>
+				<div class='table-td table left'>
+					<a class='toggle-btn'>展开</a>
+				</div>
+			</div>
+			<div class='table-tr'>
+				<div class='table-td table-right'>用户状态：</div>
+				<div class='table-td table left'>
+					<input id='status' class='easyui-combobox' />
+				</div>
+				<div class='table-td table-right'>注册起始日期：</div>
+				<div class='table-td table left'>
+					<input id='register-start' type='text' />
+				</div>
+				<div class='table-td table-right'>注册截止日期：</div>
+				<div class='table-td table left'>
+					<input id='register-end' type='text' />
+				</div>
+				<div class='table-td table left'>
+					<a class='btn btn-warn sreach1'>查询</a>
+				</div>
+			</div>
+			<div class='table-tr' style="display:none;">
+				<div class='table-td table-right'>登录状态：</div>
+				<div class='table-td table left'>
+					<input id='isOnline' class='easyui-combobox' />
+				</div>
+				<div class='table-td table-right'>最后登录起始日期：</div>
+				<div class='table-td table left'>
+					<input id='login-start' type='text' />
+				</div>
+				<div class='table-td table-right'>最后登录截止日期：</div>
+				<div class='table-td table left'>
+					<input id='login-end' type='text' />
+				</div>
+				<div class='table-td table left'>
+					<a class='btn btn-warn sreach2'>查询</a>
+				</div>
+			</div>
+		</div>
+		<div class='nav-tools'>
+			<span class='nav-text'>-- 查询结果 --</span>
+			<ul class='tools'>
+				<li><a class='btn btn-warn'>新增用户</a></li>
+				<li><a class='btn btn-ban'>删除用户</a></li>
+				<li><a class='btn btn-warn'>变更信息</a></li>
+				<li><a class='btn btn-safe'>选中导出</a></li>
+				<li><a class='btn btn-safe'>全部导出</a></li>
+			</ul>
+		</div>
+		<div class='datagrid'>
+			<!--  
+       	<div class='column'>
+       		<div class='column-th ck'><input type='checkbox' /></div>
+       		<div class='column-th '>用户姓名</div>
+       		<div class='column-th '>用户密码</div>
+       		<div class='column-th '>手机号码</div>
+       		<div class='column-th '>注册日期</div>
+       		<div class='column-th '>最后登录日期</div>
+       		<div class='column-th '>账号状态</div>
+       		<div class='column-th '>登录状态</div>
+       	</div>
+       	-->
+			<!--  
+       	<div class='my-tr'>
+       		<div class='my-td ck'><input type='checkbox' /></div>
+       		<div class='my-td'>admin</div>
+       		<div class='my-td'>******</div>
+       		<div class='my-td'>18270581420</div>
+       		<div class='my-td'>2018-05-04 15:53:00</div>
+       		<div class='my-td'>2018-05-04 15:53:00</div>
+       		<div class='my-td'>启用</div>
+       		<div class='my-td'>在线</div>
+       	</div>
+       	-->
+		</div>
+		<div class='page'>
+			<nav role='navigation'>
+				<ul class='cd-pagination no-space'>
+					<li class='button'><a class='disabled previous-page'>上一页</a></li>
+					<li><a class='current'>1</a></li>
+					<li class='button'><a class="next-page">下一页</a></li>
+				</ul>
+				<span class="pageNumber" style="display:none;"></span>
+				<span class="params" style="display:none;"></span>
+			</nav>
+		</div>
+		<div class="loading"><span>Loading...</span></div>
+	</div>
+	<script src='../../assets/js/common.js' type='text/javascript'></script>
+	<script src='../../assets/js/jquery.min.js' type='text/javascript'></script>
+	<script src='../../assets/js/jquery.cookie.js' type='text/javascript'></script>
+	<script src='../../assets/js/jquery.easyui.min.js'
+		type='text/javascript'></script>
+	<script src='../../assets/js/easyloader.js' type='text/javascript'></script>
+	<script src='../../assets/js/locale/easyui-lang-zh_CN.js'
+		type='text/javascript'></script>
+	<script src='../../assets/js/datagrid.js' type='text/javascript'></script>
+	<script src='../../assets/js/user_management.js' type='text/javascript'></script>
+</body>
+
+</html>

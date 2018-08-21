@@ -1,0 +1,108 @@
+{
+	"code":200,
+	"message":"请求成功",
+	"exception":"",
+	"url":"/ManagementSystem/assets/textData.txt",
+	"data":
+	[{
+	    "userID":"1",
+	    "userName":"admin",
+	    "password":"123",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"在线"
+	},{
+	    "userID":"2",
+	    "userName":"user1",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	},{
+	    "userID":"3",
+	    "userName":"user2",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	},{
+	    "userID":"4",
+	    "userName":"user3",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	},{
+	    "userID":"5",
+	    "userName":"user4",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	},{
+	    "userID":"6",
+	    "userName":"user5",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	},{
+	    "userID":"7",
+	    "userName":"user6",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	},{
+	    "userID":"8",
+	    "userName":"user7",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	},{
+	    "userID":"9",
+	    "userName":"user8",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	},{
+	    "userID":"10",
+	    "userName":"user9",
+	    "password":"234",
+	    "phoneNumber":"18270581420",
+	    "organization":"高安行者",
+	    "createTime":"2018-05-04 14:55:00",
+	    "lastLoginTime":"2018-05-04 14:55:00",
+	    "status":"启用",
+	    "isOnline":"离线"
+	}]
+}

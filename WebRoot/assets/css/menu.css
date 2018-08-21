@@ -1,0 +1,134 @@
+@CHARSET "UTF-8";
+/******************* start west ***********************/
+.west{
+  position: absolute;
+  left: 0px;
+  top: 50px;
+  width: 225px;
+  height: 100%;
+  background-color: #42485B;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.sidebar-toggle {
+    height: 30px;
+    line-height: 30px;
+    color: #aeb9c2;
+    background-color: #4A5064;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+.sidebar-toggle .fa {
+    margin-top: 10px;
+}
+.main-menu {
+  width: 225px;
+}
+/*菜单第一级*/
+.main-menu ul {
+  width: 225px;
+  list-style: none;
+  cursor: pointer;
+  background: #42485b;
+  color: #fff;
+  border: 0;
+}
+.main-menu ul li{
+  width: 225px;
+}
+.main-menu ul li a{
+  width: 225px;
+  height: 36px;
+  display: block;
+  /*先转化成块级元素*/
+  text-decoration: none;
+  padding: 9px 15px;
+}
+.main-menu ul li a span{
+  margin-left: 5px;
+}
+.main-menu ul li a:hover{
+  background-color: #00C1DE;
+  text-decoration: none;
+}
+.main-menu ul li ul{
+  display:none;  /*默认关闭第二级*/
+}
+/*菜单第二级*/
+.main-menu ul li ul {
+  list-style: none;
+}
+.main-menu ul li ul li {
+  width: 100%;
+}
+.main-menu ul li ul li a{
+  height: 36px;
+  display: block;
+  text-decoration: none;
+  padding: 9px 35px;
+}
+.main-menu ul li ul li a span{
+  margin-left: 5px;
+}
+.main-menu ul li ul li a:hover {
+    text-decoration: none;
+    background-color: #00C1DE;
+}
+.main-menu .open .two-level {
+  display: block;  /*打开第二级*/
+}
+.main-menu .open .two-level .three-level {
+  display: none; /*默认关闭第三级*/
+}
+/*菜单第三级*/
+.main-menu ul li ul li ul{
+  list-style: none;
+}
+.main-menu ul li ul li ul li{
+  width: 100%;
+  height: 36px;
+}
+.main-menu ul li ul li ul li a{
+  height: 36px;
+  display: block;
+  text-decoration: none;
+  padding: 9px 55px;
+}
+.menu ul li ul li ul li a span{
+  margin-left: 5px;
+}
+.main-menu ul li ul li ul li a:hover {
+    text-decoration: none;
+    background-color: #00C1DE;
+}
+.main-menu ul li ul li ul{
+  display:none;
+}
+.main-menu .open .two-level .open .three-level {
+  display: block; /*打开第三级*/
+}
+/*右侧小图标*/
+.menu-arrow {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+}
+.menu-arrow::after {
+    content: "\f104";
+}
+.main-menu .one-level .open .menu-arrow::after {
+    content: "\f106";
+}
+.main-menu .one-level .open .two-level .menu-arrow::after{
+   content: "\f104";
+}
+.main-menu .one-level .open .two-level .open .menu-arrow::after{
+   content: "\f106";
+}
+
+.url{
+  display: none;
+}
+/******************* end west ***********************/

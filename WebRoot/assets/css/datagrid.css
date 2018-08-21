@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+.datagrid{
+	display:table;
+	border:1px solid #f2f2f2;
+	border-radius: 6px;
+	text-align: center;
+}
+.column{
+	display: table-row;
+}
+.column-th{
+	display: table-cell;
+	height: 30px;
+	line-height:30px;
+	border:1px solid #f2f2f2;
+	background-color:#367ea8;
+	color:#ffffff;
+}
+.my-tr{
+	display: table-row;
+	cursor: pointer;
+}
+.my-tr:hover{
+	background-color: #00C1DE;
+}
+.my-td{
+	display: table-cell;
+	height: 30px;
+	line-height:30px;
+	border:1px solid #f2f2f2;
+}
+.selected-tr{
+	background-color: #00C1DE;
+	color:#ffffff;
+}
